@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>InnerVoiceAI — Your Mental Wellness Companion</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     LANDING PAGE
+════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Atmosphere -->
+  <div class="clouds-wrap">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="stars" id="stars"></div>
+
+  <!-- Content -->
+  <div class="home-inner">
+
+    <!-- Logo Mark -->
+    <div class="logo-mark">
+      <img src="logo.png" alt="InnerVoice AI Logo">
+    </div>
+
+    <h1 class="app-name">Inner<span>Voice</span>AI</h1>
+    <p class="tagline">A gentle space for your mind &amp; wellbeing</p>
+
+    <div class="divider"></div>
+
+    <p class="question">Who are you today?</p>
+
+    <div class="role-cards">
+      <!-- Patient -->
+      <div class="role-card" onclick="goTo('patient')" role="button" tabindex="0" aria-label="I am a Patient">
+        <span class="role-icon">
+          <!-- Soft person icon -->
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="25" fill="url(#pc1)"/>
+            <circle cx="26" cy="19" r="7" fill="rgba(255,255,255,0.85)"/>
+            <path d="M12 42 C12 33 40 33 40 42" fill="rgba(255,255,255,0.85)"/>
+            <!-- heart -->
+            <path d="M22 28 C22 26 24 24.5 26 26.5 C28 24.5 30 26 30 28 C30 30 26 33 26 33 C26 33 22 30 22 28Z" fill="#d4c8f5"/>
+            <defs>
+              <linearGradient id="pc1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c5d8f0"/>
+                <stop offset="100%" stop-color="#8b7fd4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <div class="role-title">I'm a Patient</div>
+        <div class="role-desc">Track your mood, journal, and find calm</div>
+      </div>
+
+      <!-- Doctor -->
+      <div class="role-card" onclick="goTo('doctor')" role="button" tabindex="0" aria-label="I am a Doctor">
+        <span class="role-icon">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="25" fill="url(#dc1)"/>
+            <circle cx="26" cy="18" r="6.5" fill="rgba(255,255,255,0.85)"/>
+            <path d="M13 40 C13 32 39 32 39 40" fill="rgba(255,255,255,0.85)"/>
+            <!-- stethoscope suggestion -->
+            <rect x="22" y="30" width="8" height="2" rx="1" fill="#d4c8f5"/>
+            <path d="M26 32 L26 36 C26 38 28 38 28 36 L28 35" stroke="#d4c8f5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="28" cy="35" r="1.5" fill="#d4c8f5"/>
+            <defs>
+              <linearGradient id="dc1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#d4c8f5"/>
+                <stop offset="100%" stop-color="#5b4db0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <div class="role-title">I'm a Doctor</div>
+        <div class="role-desc">View patient summaries &amp; insights</div>
+      </div>
+    </div>
+
+    <p class="footer-note">Private · Compassionate · AI-Powered</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     PATIENT DASHBOARD
+════════════════════════════════════ -->
+<div id="page-patient" class="page dash-page">
+
+  <!-- Nav -->
+  <nav class="dash-nav">
+    <div class="nav-brand"><img src="logo.png" alt="Logo" style="width: 38px; height: 38px; object-fit: contain; border-radius: 50%;"> Inner<span>Voice</span>AI</div>
+    <div class="nav-right">
+      <button class="nav-back-btn" onclick="goTo('home')">← Back</button>
+      <div class="nav-avatar" title="Your profile">🌸</div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="dash-hero">
+    <div class="dash-hero-inner">
+      <div class="hero-text">
+        <h1>Good morning, <em>Aarav</em> 🌤️</h1>
+        <p>Your mind is a garden. Let's tend to it together.</p>
+      </div>
+      <div class="hero-mood">
+        <p>How are you feeling?</p>
+        <div class="mood-emojis">
+          <span title="Rough" onclick="selectMood(this)">😔</span>
+          <span title="Okay" onclick="selectMood(this)">😐</span>
+          <span title="Good" onclick="selectMood(this)" class="active">🙂</span>
+          <span title="Great" onclick="selectMood(this)">😊</span>
+          <span title="Amazing" onclick="selectMood(this)">🌟</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-body">
+
+    <!-- ── Quick Stats ── -->
+    <div class="section-label">✦ Your Wellbeing Overview</div>
+    <div class="cards-grid cards-grid-4" style="margin-bottom:32px">
+      <div class="card card-accent-purple">
+        <span class="card-icon">📓</span>
+        <div class="card-title">Journal Streak</div>
+        <div class="card-sub">You've journaled for 7 days straight</div>
+        <div class="stat-pill">🔥 7 days</div>
+      </div>
+      <div class="card card-accent-blue">
+        <span class="card-icon">💆</span>
+        <div class="card-title">Calm Sessions</div>
+        <div class="card-sub">14 breathing & sound sessions this month</div>
+        <div class="stat-pill">✨ 14 sessions</div>
+      </div>
+      <div class="card card-accent-sage">
+        <span class="card-icon">📈</span>
+        <div class="card-title">Mood Trend</div>
+        <div class="card-sub">Your mood improved 22% this week</div>
+        <div class="stat-pill">↑ 22%</div>
+      </div>
+      <div class="card card-accent-blush">
+        <span class="card-icon">🌙</span>
+        <div class="card-title">Sleep Quality</div>
+        <div class="card-sub">Avg. 7.2 hrs · mostly restful</div>
+        <div class="stat-pill">😴 7.2 hrs</div>
+      </div>
+    </div>
+
+    <!-- ── Mood Chart ── -->
+    <div class="section-label">✦ Mood This Week</div>
+    <div class="card" style="margin-bottom:32px">
+      <div class="card-title" style="margin-bottom:4px">Daily Mood Chart</div>
+      <div class="card-sub">Your emotional rhythm across the past 7 days</div>
+      <div class="chart-mock">
+        <div class="chart-bar" style="height:55%;animation-delay:.05s"></div>
+        <div class="chart-bar" style="height:40%;animation-delay:.1s"></div>
+        <div class="chart-bar" style="height:70%;animation-delay:.15s"></div>
+        <div class="chart-bar" style="height:60%;animation-delay:.2s"></div>
+        <div class="chart-bar" style="height:85%;animation-delay:.25s"></div>
+        <div class="chart-bar" style="height:75%;animation-delay:.3s"></div>
+        <div class="chart-bar" style="height:90%;animation-delay:.35s"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:6px 2px 0;font-size:.72rem;color:var(--text-light)">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+    </div>
+
+    <!-- ── Journal ── -->
+    <div class="section-label">✦ Quick Journal</div>
+    <div class="card card-accent-purple" style="margin-bottom:32px">
+      <span class="card-icon">✍️</span>
+      <div class="card-title">What's on your mind?</div>
+      <div class="card-sub">Write freely — this is your safe space.</div>
+      <textarea class="journal-area" id="patientJournalText" placeholder="Today I feel... / I noticed... / I'm grateful for..."></textarea>
+      <input type="file" id="journalImageInput" accept="image/*" style="display:none" onchange="scanJournalImage(event)">
+      
+      <div style="display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap;">
+          <button class="submit-btn" style="margin-top:0;" onclick="submitJournal()" id="submitJournalBtn">Analyze Journal &nbsp;✨</button>
+          <button class="buster-btn" style="margin-top:0;background:rgba(212,200,245,.4);color:var(--text-dark);border:1px solid rgba(139,127,212,.3);" onclick="startVoiceInput()" id="voiceBtn" title="Speak your thoughts">🎙️ Voice</button>
+          <button class="buster-btn" style="margin-top:0;background:rgba(197,216,240,.4);color:var(--text-dark);border:1px solid rgba(143,168,216,.3);" onclick="triggerJournalImageUpload()" id="scanBtn" title="Upload handwritten journal">📸 Scan</button>
+      </div>
+      
+      <!-- NEW: Patient Insights Dashboard -->
+      <div id="aiResponseContainer" style="display:none;margin-top:24px;padding:24px;background:rgba(255,255,255,0.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:20px;border:1px solid rgba(255,255,255,0.82);box-shadow:0 10px 36px rgba(139,127,212,0.12);opacity:0;transform:translateY(12px);transition:opacity .35s ease, transform .35s ease;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(139,127,212,0.15);">
+              <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="font-size:1.4rem;">✨</span>
+                  <span style="font-weight:600;font-size:1.1rem;color:var(--sky-deep);letter-spacing:0.3px;">Patient Insights Dashboard</span>
+              </div>
+              <div id="insightEmotionBadge" style="padding:8px 14px;border-radius:999px;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:rgba(197,216,240,0.45);color:var(--sky-deep);border:1px solid rgba(139,127,212,0.18);">Neutral</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:18px;">
+              <div style="padding:16px;border-radius:16px;background:rgba(212,200,245,0.18);border:1px solid rgba(139,127,212,0.14);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Mood Score</div>
+                  <div style="display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:10px;">
+                      <div id="insightMoodScore" style="font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1;color:var(--sky-deep);">0/10</div>
+                      <div id="insightStressLevel" style="font-size:0.82rem;font-weight:600;color:var(--text-mid);text-transform:capitalize;">Low stress</div>
+                  </div>
+                  <div style="height:10px;border-radius:999px;background:rgba(139,127,212,0.12);overflow:hidden;">
+                      <div id="insightMoodBar" style="width:0%;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--cloud-blue),var(--lavender));transition:width .45s ease;"></div>
+                  </div>
+              </div>
+
+              <div style="padding:16px;border-radius:16px;background:rgba(197,216,240,0.18);border:1px solid rgba(143,168,216,0.16);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Journaling Streak</div>
+                  <div id="insightStreak" style="font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1;color:var(--sky-deep);">0 days</div>
+                  <div style="font-size:0.86rem;color:var(--text-mid);margin-top:8px;">Each check-in helps us spot patterns more clearly.</div>
+              </div>
+          </div>
+
+          <div style="margin-bottom:18px;">
+              <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;">Summary</div>
+              <p id="insightSummary" style="margin:0;font-size:1rem;color:var(--text-dark);line-height:1.65;"></p>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:18px;">
+              <div style="padding:16px;border-radius:16px;background:rgba(255,255,255,0.58);border:1px solid rgba(139,127,212,0.12);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Key Patterns</div>
+                  <ul id="insightPatterns" style="margin:0;padding-left:18px;color:var(--text-dark);line-height:1.7;"></ul>
+              </div>
+              <div style="padding:16px;border-radius:16px;background:rgba(255,255,255,0.58);border:1px solid rgba(139,127,212,0.12);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Possible Triggers</div>
+                  <div id="insightTriggers" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+              </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:18px;">
+              <div style="padding:18px;border-radius:16px;background:rgba(212,200,245,0.2);border:1px solid rgba(139,127,212,0.18);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;">Suggestion</div>
+                  <div id="insightSuggestion" style="color:var(--text-dark);line-height:1.65;"></div>
+              </div>
+              <div style="padding:18px;border-radius:16px;background:rgba(184,216,200,0.28);border:1px solid rgba(184,216,200,0.6);">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:#2a5a40;margin-bottom:8px;">Micro Action</div>
+                  <div id="insightMicroAction" style="color:#2a5a40;line-height:1.65;"></div>
+              </div>
+          </div>
+
+          <div style="padding:20px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,0.88),rgba(212,200,245,0.28));border:1px solid rgba(139,127,212,0.18);margin-bottom:18px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+                  <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);">Motivational Quote</div>
+                  <button id="saveQuoteBtn" type="button" class="buster-btn" style="margin-top:0;background:rgba(212,200,245,.38);color:var(--text-dark);border:1px solid rgba(139,127,212,.22);" onclick="saveCurrentQuote()">Save Quote</button>
+              </div>
+              <blockquote id="insightQuote" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.35;color:var(--sky-deep);font-style:italic;"></blockquote>
+          </div>
+
+          <div>
+              <div style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;">Last 5 Mood Timeline</div>
+              <div id="insightTimeline" style="display:grid;gap:10px;"></div>
+          </div>
+      </div>
+    </div>
+
+    <!-- ── Stress Busters ── -->
+    <section class="stress-busters-section">
+      <div class="stress-busters-head">
+        <div>
+          <div class="section-label">✨ Stress Busters</div>
+          <p class="stress-busters-sub">Choose a gentle reset for your body, mind, or mood. Each experience is designed to feel calm, soft, and easy to return to whenever you need it.</p>
+        </div>
+      </div>
+
+      <div class="stress-busters-grid">
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">🫁</span>
+          <div class="stress-card-chip">Breath Reset</div>
+          <div class="buster-title">Breathing Exercise</div>
+          <div class="buster-desc">4-7-8 technique to quiet your nervous system</div>
+          <button class="buster-btn" onclick="openBreath()" id="breathingBtn">Begin</button>
+        </article>
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">🌊</span>
+          <div class="stress-card-chip">Audio Calm</div>
+          <div class="buster-title">Calming Sounds</div>
+          <div class="buster-desc">Ocean waves, rain &amp; forest soundscapes</div>
+          <button class="buster-btn" onclick="openSound()" id="soundBtn">Listen</button>
+        </article>
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">🧘</span>
+          <div class="stress-card-chip">Body Scan</div>
+          <div class="buster-title">Guided Meditation</div>
+          <div class="buster-desc">5-minute body scan to release tension</div>
+          <button class="buster-btn" onclick="openMeditation()" id="meditationBtn">Start</button>
+        </article>
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">🎨</span>
+          <div class="stress-card-chip">Canvas Flow</div>
+          <div class="buster-title">Creative Expression</div>
+          <div class="buster-desc">Draw, colour or doodle away your stress</div>
+          <button class="buster-btn" onclick="openCreative()" id="creativeBtn">Explore</button>
+        </article>
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">🌿</span>
+          <div class="stress-card-chip">Ground Yourself</div>
+          <div class="buster-title">Grounding (5-4-3-2-1)</div>
+          <div class="buster-desc">Anchor yourself to the present moment</div>
+          <button class="buster-btn" onclick="openGrounding()" id="groundingBtn">Try It</button>
+        </article>
+        <article class="buster-card stress-card">
+          <div class="stress-card-glow"></div>
+          <span class="buster-emoji">💌</span>
+          <div class="stress-card-chip">Kind Words</div>
+          <div class="buster-title">Affirmations</div>
+          <div class="buster-desc">Gentle words of self-compassion for today</div>
+          <button class="buster-btn" onclick="openAffirmations()" id="affirmationsBtn">Read</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── Bubble Release Garden ── -->
+    <div class="section-label">✦ Release Garden</div>
+    <div class="card card-accent-purple" style="margin-bottom:32px;text-align:center;padding:36px 28px 30px;position:relative;overflow:hidden">
+      <!-- decorative bubbles preview -->
+      <div style="display:flex;justify-content:center;gap:-8px;margin-bottom:18px;position:relative;height:72px">
+        <div style="width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.7),rgba(197,216,240,.4) 50%,rgba(139,127,212,.25) 100%);border:1.5px solid rgba(255,255,255,.6);box-shadow:0 4px 20px rgba(91,77,176,.2);position:absolute;left:calc(50% - 80px);top:4px;animation:bubbleFloat 4s ease-in-out infinite"></div>
+        <div style="width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.65),rgba(212,200,245,.4) 50%,rgba(91,77,176,.2) 100%);border:1.5px solid rgba(255,255,255,.55);box-shadow:0 4px 24px rgba(91,77,176,.25);position:absolute;left:calc(50% - 36px);top:0;animation:bubbleFloat 5s ease-in-out infinite .8s"></div>
+        <div style="width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.7),rgba(184,216,200,.4) 50%,rgba(91,77,176,.2) 100%);border:1.5px solid rgba(255,255,255,.5);box-shadow:0 4px 18px rgba(91,77,176,.18);position:absolute;left:calc(50% + 44px);top:10px;animation:bubbleFloat 3.5s ease-in-out infinite 1.4s"></div>
+      </div>
+      <div class="card-title" style="font-size:1.45rem;margin-bottom:8px">Thought Bubble Garden</div>
+      <div class="card-sub" style="max-width:400px;margin:0 auto;line-height:1.65">Name what you've been carrying — anxiety, worry, tension, doubt. Watch it float upward as a bubble. Click to release it. Let it dissolve back into the air.</div>
+      <button class="submit-btn" style="margin-top:22px;padding:13px 40px;font-size:.95rem;letter-spacing:.04em" onclick="openGarden()">Enter the Garden &nbsp;🫧</button>
+    </div>
+
+    <!-- ── Progress Timeline ── -->
+    <div class="section-label">✦ Your Progress Timeline</div>
+    <div class="card" style="margin-bottom:32px">
+      <div class="card-title" style="margin-bottom:16px">Your Journey So Far</div>
+      <ul class="timeline">
+        <li class="tl-item">
+          <div class="tl-date">27 Mar 2026 · Today</div>
+          <div class="tl-text">Morning check-in completed. Mood rated: 🙂 Good</div>
+          <span class="tl-badge">+3 pts</span>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">26 Mar 2026</div>
+          <div class="tl-text">Completed a 10-min breathing session. Stress reduced.</div>
+          <span class="tl-badge">Milestone</span>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">24 Mar 2026</div>
+          <div class="tl-text">Journaled about work anxiety. AI noted pattern of Sunday worry.</div>
+          <span class="tl-badge">Insight</span>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">20 Mar 2026</div>
+          <div class="tl-text">7-day journal streak achieved 🎉</div>
+          <span class="tl-badge">🏆 Streak</span>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">15 Mar 2026</div>
+          <div class="tl-text">First session with InnerVoiceAI. Welcome aboard 💜</div>
+          <span class="tl-badge">Start</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ── Progress Bars ── -->
+    <div class="section-label">✦ Wellness Goals</div>
+    <div class="card card-accent-blue" style="margin-bottom:48px">
+      <div class="prog-wrap">
+        <div class="prog-label"><span>Mindfulness Practice</span><span>72%</span></div>
+        <div class="prog-bar"><div class="prog-fill" style="width:72%"></div></div>
+      </div>
+      <div class="prog-wrap" style="margin-top:16px">
+        <div class="prog-label"><span>Stress Management</span><span>58%</span></div>
+        <div class="prog-bar"><div class="prog-fill" style="width:58%;background:linear-gradient(90deg,var(--sky-soft),var(--lavender))"></div></div>
+      </div>
+      <div class="prog-wrap" style="margin-top:16px">
+        <div class="prog-label"><span>Sleep Consistency</span><span>80%</span></div>
+        <div class="prog-bar"><div class="prog-fill" style="width:80%;background:linear-gradient(90deg,var(--sage),var(--cloud-blue))"></div></div>
+      </div>
+    </div>
+
+  </div><!-- /dash-body -->
+</div><!-- /page-patient -->
+
+<!-- ════════════════════════════════════
+     DOCTOR DASHBOARD
+════════════════════════════════════ -->
+<div id="page-doctor" class="page dash-page">
+
+  <nav class="dash-nav">
+    <div class="nav-brand"><img src="logo.png" alt="Logo" style="width: 38px; height: 38px; object-fit: contain; border-radius: 50%;"> Inner<span>Voice</span>AI</div>
+    <div class="nav-right">
+      <button class="nav-back-btn" onclick="goTo('home')">← Back</button>
+      <div class="nav-avatar" title="Dr. profile">🩺</div>
+    </div>
+  </nav>
+
+  <div class="dash-hero">
+    <div class="dash-hero-inner">
+      <div class="hero-text">
+        <h1>Welcome back, <em>Dr. Sharma</em></h1>
+        <p>Here's a compassionate overview of your patients' wellbeing today.</p>
+      </div>
+      <div class="hero-mood" style="text-align:left">
+        <p style="text-transform:uppercase;font-size:.72rem;letter-spacing:.06em;color:rgba(255,255,255,.65);margin-bottom:10px">Today's Snapshot</p>
+        <div style="color:#fff;font-size:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300">8 <span style="font-size:.85rem;opacity:.7">patients tracked</span></div>
+        <div style="color:#fff;font-size:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300;margin-top:4px">2 <span style="font-size:.85rem;color:rgba(255,200,200,.85)">need attention</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-body">
+
+    <!-- ── Clinic Stats ── -->
+    <div class="section-label">✦ Clinic Overview</div>
+    <div class="cards-grid cards-grid-4" style="margin-bottom:32px">
+      <div class="card card-accent-purple">
+        <span class="card-icon">👥</span>
+        <div class="card-title">Active Patients</div>
+        <div class="card-sub">8 patients in active monitoring</div>
+        <div class="stat-pill">8 active</div>
+      </div>
+      <div class="card card-accent-blue">
+        <span class="card-icon">📊</span>
+        <div class="card-title">Avg. Mood Score</div>
+        <div class="card-sub">Across all patients this week</div>
+        <div class="stat-pill">6.8 / 10</div>
+      </div>
+      <div class="card card-accent-sage">
+        <span class="card-icon">✅</span>
+        <div class="card-title">Journal Adherence</div>
+        <div class="card-sub">Patients journaling regularly</div>
+        <div class="stat-pill">75%</div>
+      </div>
+      <div class="card card-accent-blush">
+        <span class="card-icon">⚠️</span>
+        <div class="card-title">Alerts</div>
+        <div class="card-sub">Patients showing stress spikes</div>
+        <div class="stat-pill" style="background:rgba(255,180,180,.5);color:#8a2020">2 alerts</div>
+      </div>
+    </div>
+
+    <!-- ── Clinical Trends Chart ── -->
+    <div class="section-label">✦ Clinical Trend Classification</div>
+    <div class="cards-grid cards-grid-2" style="margin-bottom:32px">
+      <div class="card">
+        <div class="card-title">Anxiety Trend (GAD-7)</div>
+        <div class="card-sub" style="margin-bottom:4px">Aggregated risk markers — Past 7 Days</div>
+        <div class="chart-mock">
+          <div class="chart-bar" style="height:30%;animation-delay:.05s"></div>
+          <div class="chart-bar" style="height:35%;animation-delay:.1s"></div>
+          <div class="chart-bar" style="height:45%;animation-delay:.15s"></div>
+          <div class="chart-bar" style="height:55%;animation-delay:.2s"></div>
+          <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
+          <div class="chart-bar" style="height:70%;animation-delay:.3s"></div>
+          <div class="chart-bar" style="height:75%;animation-delay:.35s"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:6px 2px 0;font-size:.72rem;color:var(--text-light)">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Depression Trend (PHQ-9)</div>
+        <div class="card-sub" style="margin-bottom:4px">Aggregated risk markers — Past 7 Days</div>
+        <div class="chart-mock">
+          <div class="chart-bar" style="height:40%;animation-delay:.05s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:42%;animation-delay:.1s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:48%;animation-delay:.15s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:50%;animation-delay:.2s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:60%;animation-delay:.25s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:55%;animation-delay:.3s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+          <div class="chart-bar" style="height:65%;animation-delay:.35s;background:linear-gradient(to top,var(--lavender),var(--cloud-blue))"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:6px 2px 0;font-size:.72rem;color:var(--text-light)">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Clinical Alerts ── -->
+    <div class="section-label" style="color:#8a2020">⚠️ Clinical Alerts</div>
+    <div style="margin-bottom:32px" id="doctorAlertsList">
+      <!-- Alerts rendered dynamically -->
+    </div>
+
+    <!-- ── Patient List ── -->
+    <div class="section-label">✦ Patient Summaries</div>
+    <div style="margin-bottom:32px" id="doctorPatientList">
+      <!-- Patients will be rendered here dynamically based on localStorage state -->
+    </div>
+
+    <!-- ── Behavioral Insights ── -->
+    <div class="section-label">🧠 Behavioral Insights</div>
+    <div class="cards-grid cards-grid-2" style="margin-bottom:32px" id="doctorBehavioralInsights">
+      <!-- Cards rendered dynamically -->
+    </div>
+
+    <!-- ── Notes area ── -->
+    <div class="section-label">✦ Quick Notes</div>
+    <div class="card" style="margin-bottom:48px">
+      <span class="card-icon">📝</span>
+      <div class="card-title">Clinical Notes</div>
+      <div class="card-sub">Internal notes visible only to you.</div>
+      <textarea class="journal-area" placeholder="Add clinical observations, session notes, or follow-up reminders..."></textarea>
+      <button class="submit-btn" onclick="showToast('Note saved securely 🔒')">Save Note</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     PATIENT DETAILED ANALYSIS PAGE (CLINICAL VIEW)
+════════════════════════════════════ -->
+<div id="page-patient-detail" class="page clinic-page">
+  
+  <!-- ── Alert Banner ── -->
+  <div id="clinicAlertBanner" class="clinic-alert-banner" style="display:none;">
+    <span>⚠️ <strong>HIGH RISK DETECTED:</strong> Immediate intervention recommended based on recent behavioral markers.</span>
+  </div>
+
+  <!-- ── Top Actions Nav ── -->
+  <nav class="clinic-nav">
+    <button class="clinic-btn clinic-btn-back" onclick="goTo('doctor')">← Back to Dashboard</button>
+    <div class="clinic-nav-actions">
+      <button class="clinic-btn clinic-btn-outline" onclick="showToast('Downloading Medical PDF...')">📄 Download PDF</button>
+    </div>
+  </nav>
+
+  <!-- ── SECTION 1: Patient Header ── -->
+  <header class="clinic-header clinic-card">
+    <div class="clinic-header-main">
+      <div class="clinic-avatar" id="cpAvatar"></div>
+      <div class="clinic-patient-info">
+        <h1 id="cpName">Patient Name</h1>
+        <div class="clinic-meta">
+          <span id="cpId">ID: #---</span> • <span id="cpDemographics">Age -- • Gender</span> • Last Active: <span id="cpLastActive">--</span>
+        </div>
+      </div>
+    </div>
+    <div class="clinic-header-actions">
+      <div class="clinic-risk-badge" id="cpRiskBadge">STATUS</div>
+      <div class="clinic-action-group">
+        <button class="clinic-btn clinic-btn-primary" onclick="showToast('Raw Journal opened securely')">View Raw Journal</button>
+        <button class="clinic-btn clinic-btn-primary" onclick="showToast('Message sent to patient')">Send Message</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="clinic-grid">
+    
+    <!-- ── Left Column (Main Analysis) ── -->
+    <div class="clinic-col-main">
+      
+      <!-- SECTION 2: Clinical Summary -->
+      <section class="clinic-card">
+        <h2 class="clinic-section-title">Clinical Summary <span>(AI-Generated)</span></h2>
+        <div class="clinic-summary-overview" id="cpOverview">
+          Loading emotional state overview...
+        </div>
+        
+        <div class="clinic-indicators-grid">
+          <div class="clinic-indicator">
+            <span class="ind-label">Stress Level</span>
+            <span class="ind-val" id="cpStressLevel">-</span>
+          </div>
+          <div class="clinic-indicator">
+            <span class="ind-label">Anxiety Markers</span>
+            <span class="ind-val" id="cpAnxietyMarkers">-</span>
+          </div>
+          <div class="clinic-indicator">
+            <span class="ind-label">Mood Stability</span>
+            <span class="ind-val" id="cpMoodStability">-</span>
+          </div>
+        </div>
+
+        <h3 class="clinic-section-subtitle">Behavioral Observations</h3>
+        <ul class="clinic-obs-list" id="cpBehavioralList">
+          <li>Loading observations...</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 3: Emotion Analysis -->
+      <section class="clinic-card">
+        <h2 class="clinic-section-title">Emotion Analysis</h2>
+        
+        <div class="clinic-emotion-layout">
+          <!-- Timeline Graph -->
+          <div class="clinic-emotion-col">
+            <h3 class="clinic-section-subtitle">Longitudinal Emotion Trend</h3>
+            <div class="clinic-chart-container" id="cpEmotionTimeline">
+              <!-- JS will fill with minimal clinical bars -->
+            </div>
+            <div class="clinic-chart-x-axis">
+              <span>Day 1</span><span>Day 2</span><span>Day 3</span><span>Day 4</span><span>Day 5</span><span>Day 6</span><span>Day 7</span>
+            </div>
+          </div>
+          
+          <!-- Emotion Distribution -->
+          <div class="clinic-emotion-col">
+            <h3 class="clinic-section-subtitle">Current Distribution</h3>
+            <div class="clinic-emotion-dist" id="cpEmotionDist">
+               <!-- Distribution Bars -->
+               <div class="dist-row"><span class="dist-lbl">Neutral</span><div class="dist-bar-wrap"><div class="dist-bar" style="width:50%;background:#b0bec5;"></div></div><span class="dist-pct">50%</span></div>
+               <div class="dist-row"><span class="dist-lbl">Anxious</span><div class="dist-bar-wrap"><div class="dist-bar" style="width:30%;background:#ffa726;"></div></div><span class="dist-pct">30%</span></div>
+               <div class="dist-row"><span class="dist-lbl">Sad</span><div class="dist-bar-wrap"><div class="dist-bar" style="width:15%;background:#64b5f6;"></div></div><span class="dist-pct">15%</span></div>
+               <div class="dist-row"><span class="dist-lbl">Happy</span><div class="dist-bar-wrap"><div class="dist-bar" style="width:5%;background:#81c784;"></div></div><span class="dist-pct">5%</span></div>
+            </div>
+            <div class="clinic-dominant-emotion">
+              Dominant: <strong id="cpDominantEmotion">Neutral Indicator</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Journal Insights -->
+      <section class="clinic-card">
+        <div class="clinic-journal-header">
+           <h2 class="clinic-section-title">Journal Insights</h2>
+           <div class="clinic-sentiment-score">Sentiment Score: <strong id="cpSentimentScore">--/100</strong></div>
+        </div>
+        <p class="clinic-detail-text">Extracted thematic phrases prioritizing critical clinical markers.</p>
+        <div class="clinic-keyword-cloud" id="cpKeywords">
+          <!-- Filled by JS -->
+        </div>
+        <h3 class="clinic-section-subtitle">Current Excerpt</h3>
+        <blockquote class="clinic-excerpt" id="cpJournalExcerpt">
+           ...
+        </blockquote>
+      </section>
+      
+      <!-- SECTION 6: Progress Tracking -->
+      <section class="clinic-card">
+        <h2 class="clinic-section-title">Progress Tracking</h2>
+        <div class="clinic-progress-stats">
+          <div class="clinic-prog-stat">
+             <span class="prog-val up" id="cpTrendVal">--</span>
+             <span class="prog-lbl">7-Day Trend</span>
+          </div>
+          <div class="clinic-prog-stat">
+             <span class="prog-val" id="cpAdherenceVal">--</span>
+             <span class="prog-lbl">Journal Consistency</span>
+          </div>
+        </div>
+        <div class="clinic-adherence-tracker" id="cpAdherenceTracker">
+          <!-- Filled by JS -->
+          <div class="adh-day present"></div><div class="adh-day present"></div><div class="adh-day present"></div>
+          <div class="adh-day missed"></div><div class="adh-day present"></div><div class="adh-day missed"></div><div class="adh-day present"></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ── Right Column (Sidebar) ── -->
+    <div class="clinic-col-side">
+      
+      <!-- SECTION 5: Risk Assessment -->
+      <section class="clinic-card clinic-risk-card" id="cpRiskCard">
+        <h2 class="clinic-section-title" style="color:var(--clinic-alert);">Risk Assessment</h2>
+        <div class="clinic-severity" id="cpRiskLevelText"><strong>Severity:</strong> HIGH</div>
+        <div class="clinic-risk-detect" id="cpRiskDetect">Positive detection of distress markers.</div>
+        
+        <h3 class="clinic-section-subtitle">Trigger Factors</h3>
+        <ul class="clinic-obs-list" id="cpTriggerReasons">
+          <li>Loading triggers...</li>
+        </ul>
+        
+        <div class="clinic-recommendation">
+          <strong>Recommendation:</strong>
+          <span id="cpRiskRec">Immediate Intervention Required</span>
+        </div>
+      </section>
+
+      <!-- SECTION 8: AI Recommendations -->
+      <section class="clinic-card">
+        <h2 class="clinic-section-title">AI Clinical Recommendations</h2>
+        
+        <h3 class="clinic-section-subtitle">Suggested Therapy Actions</h3>
+        <ul class="clinic-obs-list" id="cpAiActions">
+          <li>CBT for cognitive distortion</li>
+        </ul>
+
+        <h3 class="clinic-section-subtitle">For Next Session</h3>
+        <ul class="clinic-obs-list" id="cpAiQuestions">
+          <li>Inquire about sleep quality over the weekend.</li>
+        </ul>
+
+        <h3 class="clinic-section-subtitle">Patient Coping Mechanisms</h3>
+        <ul class="clinic-obs-list" id="cpAiCoping">
+          <li>4-7-8 Breathing exercises</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 7: Doctor Notes -->
+      <section class="clinic-card clinic-notes-card">
+        <h2 class="clinic-section-title">Doctor Notes</h2>
+        <textarea class="clinic-textarea" id="cpDoctorNotes" placeholder="Enter clinical observations here..."></textarea>
+        <button class="clinic-btn clinic-btn-primary" onclick="saveClinicNote()">Save Encrypted Note</button>
+        <div id="cpNoteSavedStatus" class="clinic-note-status"></div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     MODALS & OVERLAYS
+════════════════════════════════════ -->
+
+<!-- Breathing Exercise Overlay -->
+<div class="breath-overlay" id="breathOverlay">
+  <div class="wellness-shell stress-screen stress-screen-breath">
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">4-7-8 Breathing</div>
+      </div>
+      <button class="breath-close" onclick="closeBreath()">End Session</button>
+    </div>
+    <div class="wellness-panel breath-layout">
+      <div class="breath-stats">
+        <div class="stress-mini-stat">
+          <span class="stress-mini-label">Phase</span>
+          <strong id="breathPhaseLabel">Ready</strong>
+        </div>
+        <div class="stress-mini-stat">
+          <span class="stress-mini-label">Timer</span>
+          <strong id="breathTimer">00:00</strong>
+        </div>
+      </div>
+      <div class="breath-circle-wrap">
+        <div class="breath-circle" id="breathCircle">Inhale</div>
+      </div>
+      <div class="breath-text" id="breathText">Press start and breathe gently with the circle.</div>
+      <div class="wellness-helper">Inhale 4s • Hold 7s • Exhale 8s • Reset whenever you need a fresh start.</div>
+      <div class="wellness-grid">
+        <button class="submit-btn" style="margin-top:0" onclick="startBreathSession()">Start</button>
+        <button class="buster-btn" onclick="pauseBreathSession()">Pause</button>
+        <button class="buster-btn" onclick="resetBreathSession()">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sound Overlay -->
+<div class="sound-overlay" id="soundOverlay">
+  <div class="wellness-shell stress-screen stress-screen-sound">
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">Calming Sounds</div>
+      </div>
+      <button class="breath-close" onclick="closeSound()">Close</button>
+    </div>
+    <div class="wellness-panel sound-layout">
+      <p class="wellness-copy">Let the world soften around you with a slow, looping soundscape.</p>
+      <div class="sound-options">
+        <button class="sound-option active" onclick="selectSoundscape('Ocean Waves', 240, this)">Ocean Waves</button>
+        <button class="sound-option" onclick="selectSoundscape('Rain', 210, this)">Rain</button>
+        <button class="sound-option" onclick="selectSoundscape('Forest', 230, this)">Forest</button>
+        <button class="sound-option" onclick="selectSoundscape('White Noise', 180, this)">White Noise</button>
+      </div>
+      <div class="sound-player-card">
+        <div class="sound-player-top">
+          <div>
+            <div class="stress-mini-label">Now Playing</div>
+            <div class="sound-track-name" id="soundTrackName">Ocean Waves</div>
+          </div>
+          <button class="sound-loop-toggle" id="soundLoopBtn" onclick="toggleSoundLoop()">Loop Off</button>
+        </div>
+        <div class="sound-visual">
+          <div class="sound-bar" style="animation-delay:0s"></div>
+          <div class="sound-bar" style="animation-delay:.15s"></div>
+          <div class="sound-bar" style="animation-delay:.3s"></div>
+          <div class="sound-bar" style="animation-delay:.45s"></div>
+          <div class="sound-bar" style="animation-delay:.3s"></div>
+          <div class="sound-bar" style="animation-delay:.15s"></div>
+          <div class="sound-bar" style="animation-delay:0s"></div>
+        </div>
+        <div class="player-progress-meta">
+          <span id="soundCurrentTime">00:00</span>
+          <span id="soundDuration">04:00</span>
+        </div>
+        <input type="range" min="0" max="240" value="0" id="soundProgress" class="stress-slider" oninput="seekSoundscape(this.value)">
+        <div class="player-control-row">
+          <button class="submit-btn" style="margin-top:0" id="soundPlayBtn" onclick="toggleSoundPlayback()">Play</button>
+          <div class="player-volume">
+            <span>Volume</span>
+            <input type="range" min="0" max="100" value="70" class="stress-slider stress-slider-volume" oninput="setSoundVolume(this.value)">
+          </div>
+        </div>
+      </div>
+      <div class="wellness-note" id="soundNowPlaying">Placeholder player ready. Replace `fetchSoundscapeTrack()` with real backend/audio integration later.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Meditation Overlay -->
+<div class="sound-overlay" id="meditationOverlay">
+  <div class="wellness-shell stress-screen stress-screen-meditation">
+    <div class="particle-field" id="meditationParticles"></div>
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">Guided Meditation</div>
+      </div>
+      <button class="breath-close" onclick="closeMeditation()">Close</button>
+    </div>
+    <div class="wellness-panel meditation-layout">
+      <div class="meditation-orb"></div>
+      <div class="meditation-subtitle">5-minute body scan</div>
+      <div class="wellness-note" id="meditationStepTitle">Close your eyes</div>
+      <p class="wellness-copy" id="meditationStepText">Let your body settle. Unclench your jaw, soften your shoulders, and allow your breath to slow down naturally.</p>
+      <div class="player-progress-meta">
+        <span id="meditationCurrentTime">00:00</span>
+        <span id="meditationDuration">05:00</span>
+      </div>
+      <div class="wellness-progress"><span id="meditationProgressBar"></span></div>
+      <div class="player-control-row">
+        <button class="submit-btn" style="margin-top:0" id="meditationPlayBtn" onclick="toggleMeditationPlayback()">Play</button>
+        <button class="buster-btn" onclick="toggleMeditationVoice()" id="meditationVoiceBtn">Voice On</button>
+      </div>
+      <div class="wellness-grid">
+        <button class="buster-btn" onclick="previousMeditationStep()">← Previous</button>
+        <button class="buster-btn" onclick="nextMeditationStep()">Next Cue</button>
+      </div>
+      <div class="wellness-note">Placeholder meditation player ready for future narrated audio integration.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Creative Overlay -->
+<div class="sound-overlay" id="creativeOverlay">
+  <div class="wellness-shell wellness-shell-creative">
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">Creative Expression 🎨</div>
+      </div>
+      <button class="breath-close" onclick="closeCreative()">Close</button>
+    </div>
+    <div class="wellness-panel" style="gap:10px;width:100%">
+      <p class="wellness-copy" style="margin-bottom:2px">Draw how you feel today. No pressure to make it perfect.</p>
+      <div class="creative-toolbar">
+        <div class="creative-colors">
+          <button class="color-swatch active" style="background:#ffffff" data-color="#ffffff" onclick="setDrawColor(this)" title="White"></button>
+          <button class="color-swatch" style="background:#d4c8f5" data-color="#d4c8f5" onclick="setDrawColor(this)" title="Lavender"></button>
+          <button class="color-swatch" style="background:#c5d8f0" data-color="#c5d8f0" onclick="setDrawColor(this)" title="Sky Blue"></button>
+          <button class="color-swatch" style="background:#f9c7c7" data-color="#f9c7c7" onclick="setDrawColor(this)" title="Rose"></button>
+          <button class="color-swatch" style="background:#b8d8c8" data-color="#b8d8c8" onclick="setDrawColor(this)" title="Sage"></button>
+          <button class="color-swatch" style="background:#ffd8a8" data-color="#ffd8a8" onclick="setDrawColor(this)" title="Peach"></button>
+          <button class="color-swatch" style="background:#a8e6cf" data-color="#a8e6cf" onclick="setDrawColor(this)" title="Mint"></button>
+          <button class="color-swatch" style="background:#ffafd2" data-color="#ffafd2" onclick="setDrawColor(this)" title="Pink"></button>
+          <button class="color-swatch" style="background:#5b4db0" data-color="#5b4db0" onclick="setDrawColor(this)" title="Purple"></button>
+          <button class="color-swatch" style="background:#2d1b69" data-color="#2d1b69" onclick="setDrawColor(this)" title="Indigo"></button>
+          <input type="color" class="creative-color-picker" value="#d4c8f5" onchange="setCustomColor(this.value)" title="Pick custom color">
+        </div>
+        <div class="creative-size-row">
+          <label class="size-label">Tools</label>
+          <button class="creative-tool-btn active" id="pencilBtn" onclick="setCreativeTool('pencil')">✏️ Pencil</button>
+          <button class="creative-tool-btn" id="brushBtn" onclick="setCreativeTool('brush')">🖌 Brush</button>
+          <button class="creative-tool-btn" id="eraserBtn" onclick="toggleEraser()">⌫ Eraser</button>
+        </div>
+        <div class="creative-size-row">
+          <label class="size-label">Stroke</label>
+          <input type="range" id="brushSize" min="2" max="28" value="6" oninput="updateBrushSize(this.value)" class="brush-range">
+          <button class="creative-tool-btn" onclick="undoCanvas()">↶ Undo</button>
+          <button class="creative-tool-btn" onclick="redoCanvas()">↷ Redo</button>
+          <button class="creative-tool-btn" onclick="clearCanvas()">🗑 Clear</button>
+          <button class="creative-tool-btn" onclick="saveCanvasDrawing()">💾 Save</button>
+        </div>
+      </div>
+      <canvas id="creativeCanvas" class="creative-canvas"></canvas>
+      <div class="wellness-note" style="font-size:.78rem">Creative release works even when it isn't pretty — it only needs to feel honest.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Grounding Overlay -->
+<div class="sound-overlay" id="groundingOverlay">
+  <div class="wellness-shell">
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">5-4-3-2-1 Grounding 🌿</div>
+      </div>
+      <button class="breath-close" onclick="closeGrounding()">Close</button>
+    </div>
+    <div class="wellness-panel" style="gap:18px">
+      <!-- Step indicator -->
+      <div class="grounding-step-badge" id="groundingStepBadge">Step 1 of 5</div>
+      <div class="grounding-progress"><span id="groundingProgressBar"></span></div>
+      <div class="grounding-icon" id="groundingIcon">👁️</div>
+      <div class="wellness-note" style="font-size:1.1rem;font-style:italic;color:#fff" id="groundingTitle">Notice 5 things you can <strong style="color:var(--lavender)">see</strong></div>
+      <p class="wellness-copy" id="groundingDesc">Look around slowly. Name 5 things you can see right now — a color, a shape, a texture. Say them quietly to yourself.</p>
+      
+      <!-- List for inputs -->
+      <div class="grounding-inputs" id="groundingInputs"></div>
+
+      <!-- Progress dots -->
+      <div class="grounding-dots" id="groundingDots">
+        <span class="g-dot active" data-step="0"></span>
+        <span class="g-dot" data-step="1"></span>
+        <span class="g-dot" data-step="2"></span>
+        <span class="g-dot" data-step="3"></span>
+        <span class="g-dot" data-step="4"></span>
+      </div>
+      
+      <div class="wellness-grid">
+        <button class="buster-btn" onclick="groundingPrev()">← Previous</button>
+        <button class="submit-btn" style="margin-top:0" onclick="groundingNext()" id="groundingNextBtn">Next Step →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Affirmations Overlay -->
+<div class="sound-overlay" id="affirmationOverlay">
+  <div class="wellness-shell stress-screen stress-screen-affirmation">
+    <div class="wellness-topbar">
+      <div>
+        <div class="wellness-kicker">Stress Buster</div>
+        <div class="wellness-title">Affirmations 💌</div>
+      </div>
+      <button class="breath-close" onclick="closeAffirmations()">Close</button>
+    </div>
+    <div class="wellness-panel affirmation-layout">
+      <div class="wellness-icon-hero">💌</div>
+      <blockquote class="wellness-quote affirmation-fade" id="affirmationQuote">I can move through today with softness instead of pressure.</blockquote>
+      <div class="player-control-row">
+        <button class="buster-btn" onclick="refreshAffirmation()">Next affirmation</button>
+        <button class="buster-btn" id="affirmationMusicBtn" onclick="toggleAffirmationMusic()">Music Off</button>
+      </div>
+      <div class="wellness-grid">
+        <button class="submit-btn" style="margin-top:0" onclick="saveCurrentQuote()">Save / Favorite</button>
+        <button class="buster-btn" onclick="shareAffirmation()">Share</button>
+      </div>
+      <div class="wellness-note">Soft ambient music toggle is a placeholder until audio assets are connected.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ════════════════════════════════════
+     BUBBLE GARDEN OVERLAY
+════════════════════════════════════ -->
+<div class="bubble-overlay" id="bubbleOverlay">
+
+  <!-- Top Nav -->
+  <div class="garden-nav">
+    <div class="garden-nav-title">Release <em>Garden</em></div>
+    <div class="garden-released">
+      <span id="gardenCount">0</span> bubbles released today
+    </div>
+    <button class="garden-close-btn" onclick="closeGarden()">← Back to Dashboard</button>
+  </div>
+
+  <!-- Thought chips -->
+  <div class="thought-row" id="thoughtRow">
+    <button class="thought-chip" data-thought="Anxiety"      onclick="selectThought(this)">Anxiety</button>
+    <button class="thought-chip" data-thought="Overthinking" onclick="selectThought(this)">Overthinking</button>
+    <button class="thought-chip" data-thought="Doubt"        onclick="selectThought(this)">Doubt</button>
+    <button class="thought-chip" data-thought="Worry"        onclick="selectThought(this)">Worry</button>
+    <button class="thought-chip" data-thought="Tension"      onclick="selectThought(this)">Tension</button>
+    <button class="thought-chip" data-thought="Fear"         onclick="selectThought(this)">Fear</button>
+    <button class="thought-chip" data-thought="Sadness"      onclick="selectThought(this)">Sadness</button>
+    <button class="thought-chip" data-thought="Pressure"     onclick="selectThought(this)">Pressure</button>
+    <button class="thought-chip" data-thought="Anger"        onclick="selectThought(this)">Anger</button>
+    <button class="thought-chip" data-thought="Loneliness"   onclick="selectThought(this)">Loneliness</button>
+    <button class="thought-chip" data-thought="Shame"        onclick="selectThought(this)">Shame</button>
+    <button class="thought-chip" data-thought="Exhaustion"   onclick="selectThought(this)">Exhaustion</button>
+  </div>
+
+  <!-- Canvas -->
+  <div class="garden-canvas-wrap" id="gardenWrap">
+    <canvas id="bubbleCanvas"></canvas>
+    <div class="garden-hint-text" id="gardenHint">
+      Select a feeling above · Click anywhere to grow a bubble · Click a bubble to release it
+    </div>
+  </div>
+
+  <!-- Affirmation strip -->
+  <div class="garden-affirmation" id="gardenAff">
+    <div class="garden-aff-text" id="gardenAffText"></div>
+  </div>
+
+  <!-- Controls -->
+  <div class="garden-controls-row">
+    <button class="garden-ctrl-btn" onclick="spawnBurst()">Fill the garden 🌸</button>
+    <span class="garden-ctrl-sep">◆</span>
+    <button class="garden-ctrl-btn" onclick="clearAllBubbles()">Clear all</button>
+    <span class="garden-ctrl-sep">◆</span>
+    <button class="garden-ctrl-btn" onclick="popAllBubbles()">Release all ✨</button>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════ -->
+<script src="script.js"></script>
+
+</body>
+</html>
